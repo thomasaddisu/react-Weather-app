@@ -1,0 +1,146 @@
+/* 📱 Responsive Tweaks */
+@media (max-width: 480px) {
+  .weather__search {
+  display: flex;
+  margin-bottom: 25px;
+  width: 90%;
+  margin: 0 auto;
+  
+}
+  .weather__card {
+    width: 80%;
+    padding: 20px;
+    height: auto;
+  }
+  .weather__days {
+    margin-top: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+  .weather__card {
+    padding: 20px;
+  }
+
+  .weather__temp {
+    font-size: 42px;
+  }
+
+  .weather__icon {
+    font-size: 40px;
+  }
+
+  .weather__details {
+    justify-content: center;
+    align-items: center;
+  }
+  .weather__detail {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 20px;
+  }
+  .weather__desc {
+    font-size: 14px;
+    margin: 15px 0 25px;
+  }
+  .weather__date {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 780px) {
+
+  .weather__search {
+  display: flex;
+  margin-bottom: 25px;
+  width: 90%;
+  margin: 0 auto;
+  
+}
+  .weather__card {
+    width: 80%;
+    padding: 20px;
+    height: auto;
+  }
+  .weather__days {
+    margin-top: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+  .weather__card {
+    padding: 20px;
+  }
+
+  .weather__temp {
+    font-size: 62px;
+  }
+
+  .weather__icon {
+    font-size: 60px;
+  }
+
+  .weather__details {
+    justify-content: center;
+    align-items: center;
+  }
+  .weather__detail {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 20px;
+  }
+
+  .weather__date {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-bottom: 15px;
+  }
+  .weather__desc {
+    font-size: 14px;
+    margin: 15px 0 25px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .weather__days {
+    margin-top: 1px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  }
+  .weather__card {
+    width: 90%;
+    padding: 20px;
+    height: auto;
+  }
+  .weather__temp {
+    font-size: 48px;
+  }
+  .weather__icon {
+    font-size: 45px;
+  }
+
+  .weather__details {
+    justify-content: center;
+    align-items: center;
+  }
+  .weather__detail {
+   font-size: 13px;
+   padding: 10px;
+  }
+
+
+}

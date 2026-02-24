@@ -18,7 +18,7 @@ html, body, #root {
 
 .weather__card {
   width: 100%;
-  max-width: 400px;
+  max-width: 1200px;
   padding: 30px;
   border-radius: 25px;
   background: rgba(255, 255, 255, 0.15);
@@ -28,6 +28,9 @@ html, body, #root {
   text-align: center;
   margin: 10px;
   height: 400px;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 .weather__card-loading {
@@ -43,6 +46,9 @@ html, body, #root {
 .weather__search {
   display: flex;
   margin-bottom: 25px;
+  max-width: 400px;
+  margin: 0 auto;
+  
 }
 
 .weather__search input {
@@ -65,7 +71,7 @@ html, body, #root {
 }
 
 .weather__search button:hover {
-  background: #f0f0f0;
+  background-color: #098288;
 }
 
 /* Info */
@@ -75,7 +81,7 @@ html, body, #root {
 }
 
 .weather__date {
-  font-size: 14px;
+  font-size: 16px;
   opacity: 0.85;
   margin-bottom: 15px;
 }
@@ -85,6 +91,20 @@ html, body, #root {
   justify-content: center;
   align-items: center;
   gap: 15px;
+}
+
+.weather__day {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  width: 30%;
+}
+
+.weather__days {
+  margin-top: 20px;
+  display: flex;
+  gap: 3.34%;
+
 }
 
 .weather__icon {
@@ -115,21 +135,8 @@ html, body, #root {
   font-size: 14px;
 }
 
-/* 📱 Responsive Tweaks */
-@media (max-width: 480px) {
-  .weather__card {
-    padding: 20px;
-  }
-
-  .weather__temp {
-    font-size: 42px;
-  }
-
-  .weather__icon {
-    font-size: 40px;
-  }
-
-  .weather__details {
-    flex-direction: column;
-  }
+.weather__divider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.3);
 }
+

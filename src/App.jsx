@@ -9,25 +9,36 @@ function App() {
   // lets controle city is not correct
   
 
-  const fetchWeatherData = async (location="Addis Ababa") => {
+const fetchWeatherData = async (location = "Addis Ababa") => {
+  const apiKey = "9537e31c70f9105cbabb8c63d1fc3c27";
+  const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=metric`;
 
-    const apiKey = "9537e31c70f9105cbabb8c63d1fc3c27";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
+  try {
+    const response = await axios.get(apiUrl);
+    const data = response.data;
 
-    
-    try {
-      const response = await axios.get(apiUrl);
-      const data = response.data;
-      setWeatherData(data);
-      // console.log(weatherData)
-    } catch (error) {
-      console.error("Error fetching weather data:", error);
-      setWeatherData(null);
-    }
-  };
+    // Get one forecast per day (every 8 items = 24 hours)
+    const threeDays = [
+      data.list[0],
+      data.list[8],
+      data.list[16],
+    ];
+
+    setWeatherData({
+      city: data.city.name,
+      forecast: threeDays,
+    });
+  } catch (error) {
+    console.error("Error fetching weather data:", error);
+    setWeatherData(null);
+  }
+};
+
   useEffect(() => {
     fetchWeatherData();
+
   }, []);
+
 
   return (
     <>
