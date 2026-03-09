@@ -1,16 +1,69 @@
-# React + Vite
+# weather-app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Small React-based weather app (Vite-friendly). Provides current weather information for a searched location and uses a simple static icon in `public/cloudy.png`.
 
-Currently, two official plugins are available:
+## Features
+- Search weather by city
+- Responsive UI
+- Built with modern React (JSX entry at `src/main.jsx`)
+- Static favicon at `public/cloudy.png`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
+- Node.js 14+ and npm (or Yarn)
+- A weather API key (OpenWeatherMap or similar)
 
-## React Compiler
+## Quick Start
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Clone the repo
+    ```bash
+    git clone <repo-url>
+    cd react-weather-app
+    ```
 
-## Expanding the ESLint configuration
+2. Install dependencies
+    ```bash
+    npm install
+    ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. Provide your API key (example for Vite)
+    - Create a `.env` file in project root:
+      ```
+      VITE_WEATHER_API_KEY=your_api_key_here
+      ```
+
+4. Run in development
+    ```bash
+    npm run dev
+    ```
+    Open http://localhost:5173 (or the URL shown in the terminal).
+
+5. Build for production
+    ```bash
+    npm run build
+    npm run preview   # optional: preview the production build locally
+    ```
+
+## Project layout (typical)
+```
+/public
+  └─ cloudy.png
+index.html
+/src
+  └─ main.jsx
+  └─ App.jsx
+  └─ components/
+README.md
+```
+
+Adjust paths if your setup differs.
+
+## Notes & Troubleshooting
+- index.html mounts React at `<div id="root"></div>` and loads `src/main.jsx`.
+- Ensure your API key is valid and CORS is allowed by the weather API.
+- If using a different bundler, adapt env variable names and scripts accordingly.
+
+## Contributing
+Pull requests and issues welcome. Keep changes small and focused.
+
+## License
+MIT
