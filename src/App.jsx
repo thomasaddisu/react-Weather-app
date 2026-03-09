@@ -12,7 +12,7 @@ function App() {
   
 
 const fetchWeatherData = async (location = "Addis Ababa") => {
-  const apiKey = "9537e31c70f9105cbabb8c63d1fc3c27";
+  const apiKey = import.meta.env.VITE_WEATHER_KEY;
   const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=metric`;
 
   try {
