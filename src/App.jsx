@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
+import "./components/weatherApp.css";
 import WeatherApp from "./components/weatherApp";
 
 function App() {
   // weather app state and logic can be added here in the future
   const [weatherData, setWeatherData] = useState(null);
   // lets controle city is not correct
+
   
 
 const fetchWeatherData = async (location = "Addis Ababa") => {
@@ -29,8 +31,9 @@ const fetchWeatherData = async (location = "Addis Ababa") => {
       forecast: threeDays,
     });
   } catch (error) {
-    console.error("Error fetching weather data:", error);
+     console.error("Error fetching weather data:", error);
     setWeatherData(null);
+   
   }
 };
 
@@ -39,12 +42,30 @@ const fetchWeatherData = async (location = "Addis Ababa") => {
 
   }, []);
 
-
-  return (
+  if (!weatherData) {
+    return (
+      <div className="weather">
+        <div className="weather__card">
+          <div className="weather__search">
+        
+          </div>
+          <div className="weather__card-loading">
+             <p> You have entered an invalid city name, please try again with a valid city name.</p>
+              <button  onClick={() => fetchWeatherData()}>Try Again</button>
+          </div>
+        </div>
+      </div>
+    );
+  }else {
+     return (
     <>
       <WeatherApp weatherData={weatherData} onSearch={fetchWeatherData} />
     </>
   );
+  }
+
+
+ 
 }
 
 export default App;
